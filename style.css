@@ -1,0 +1,98 @@
+/* Gaya Umum */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 56px; /* Agar konten tidak tertutup navbar fixed-top */
+    background-color: #f8f9fa; /* Latar belakang body sedikit abu-abu */
+}
+
+/* Header & Navigasi */
+.navbar {
+    background-color: #007bff !important; /* Biru Primer yang Kuat */
+}
+
+/* Hero Section (Dengan Gambar Latar Belakang) */
+.hero-section {
+    /* Pastikan 'backgrond.jpg' benar-benar nama file gambar Anda */
+    background-image: url('backgrond.jpg'); 
+    
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+    /* Setup posisi dan z-index untuk overlay */
+    position: relative;
+    z-index: 1;
+
+    min-height: 80vh;
+    padding: 150px 0;
+    /* Efek melengkung di bawah */
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); 
+}
+
+/* Layer Overlay (Lapisan Transparan) untuk kejelasan teks */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Hitam transparan (50%) - sesuaikan nilai 0.5 jika teks masih kurang jelas */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+/* Memastikan teks tetap terlihat jelas di depan overlay */
+.hero-section .container {
+    position: relative;
+    z-index: 2; 
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow agar teks menonjol */
+}
+
+/* Kartu Sila (Interaktif) */
+.card-sila {
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.card-sila:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Judul Sila Section */
+#sila-section h2 {
+    font-size: 2.5rem;
+}
+
+
+/* Modal (Pop-up Detail Sila) */
+.modal-header {
+    background-color: #007bff; /* Warna header modal */
+}
+.modal-content {
+    border-radius: 15px;
+}
+.btn-close-white {
+    filter: brightness(0) invert(1); /* Agar ikon silang terlihat putih di header biru */
+}
+
+
+/* Penyesuaian Warna Ikon dan Teks (Sesuai Bootstrap) */
+.text-primary { color: #007bff !important; }
+.text-success { color: #28a745 !important; }
+.text-danger { color: #dc3545 !important; }
+.text-warning { color: #ffc107 !important; }
+.text-info { color: #17a2b8 !important; }
+
+/* Footer - WARNA BIRU SAMA DENGAN HEADER */
+footer {
+    background-color: #007bff !important; 
+    /* Pastikan teks di footer tetap putih (diatur di index.html pada class text-white) */
+}
